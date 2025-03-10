@@ -1,41 +1,38 @@
-# Credit-Card-Fraud-Detection
-A credit card fraud detection project using Logistic Regression. It includes data exploration, preprocessing, model training, and evaluation. The dataset has 284,807 transactions, with an imbalanced class distribution (few fraud cases).
-The PDF contains a Jupyter Notebook output related to a machine learning project, specifically a credit card fraud detection task. Here’s what I observed:
+Credit Card Fraud Detection 🕵️‍♂️💳
+This Jupyter Notebook demonstrates a credit card fraud detection model using Logistic Regression. It includes data exploration, preprocessing, model training, and evaluation.
 
-Dataset Information:
-
-The dataset (creditcard.csv) has 284,807 rows and 31 columns.
-Columns include Time, Amount, Class, and V1 to V28 (likely features from PCA).
-No missing values in the dataset.
-Exploratory Data Analysis (EDA):
-
-df.describe().T shows summary statistics of the dataset.
-A pie chart was plotted to show fraud vs. non-fraud transactions.
-A Seaborn heatmap was used to visualize feature correlations.
-Data Preprocessing:
-
-Removed duplicate rows.
-Split the dataset into features (X) and target variable (y).
-Used train_test_split() to create training and test sets.
-Model Training:
-
-Used Logistic Regression for fraud detection.
-Encountered a ConvergenceWarning, suggesting that more iterations or data scaling was needed.
-Model Evaluation:
-
-Confusion Matrix results:
+📊 Dataset Overview
+Dataset: creditcard.csv
+Size: 284,807 transactions, 31 features
+Features: Time, Amount, Class, and V1 to V28 (PCA-transformed)
+Class Distribution: Highly imbalanced (few fraud cases)
+🔍 Exploratory Data Analysis (EDA)
+Statistical summary (df.describe().T)
+Fraud vs. non-fraud pie chart
+Heatmap for feature correlation
+⚙️ Data Preprocessing
+Removed duplicate rows
+Split data into training (75%) and test (25%) sets
+Defined features (X) and target variable (y)
+🤖 Model Training
+Used Logistic Regression
+Faced a ConvergenceWarning (suggesting more iterations or data scaling)
+📈 Model Evaluation
+Confusion Matrix:
 Train set: [[212348, 89], [137, 220]]
 Test set: [[70784, 32], [37, 79]]
 Classification Report:
-High accuracy (~99.9%) but relatively low recall for fraud detection.
-Accuracy Scores:
+Accuracy: 99.9%
+Recall for fraud cases is relatively low
+Final Accuracy:
 Train: 99.89%
 Test: 99.90%
-Model Saving:
-
-Saved the trained model using joblib (model_filename.pkl).
-Observations:
-The dataset is highly imbalanced, as there are far fewer fraud cases.
-The high accuracy might be misleading due to class imbalance.
-The model might benefit from resampling techniques like oversampling fraud cases or using anomaly detection methods.
-Let me know if you need further insights! 🚀
+💾 Model Saving
+Saved using joblib (model_filename.pkl) for future use
+⚠️ Observations & Next Steps
+The dataset is highly imbalanced, affecting fraud detection
+High accuracy may be misleading due to class imbalance
+Model can be improved using:
+Oversampling fraud cases (SMOTE)
+Anomaly detection techniques
+Other ML models like Random Forest or Neural Networks
